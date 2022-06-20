@@ -13,8 +13,13 @@ const GlobalStyle = createGlobalStyle`
 body {
   padding:0;
   margin:0;
+  height: 100%;
 }
-  
+
+svg {
+  display: block;
+  max-width: 100%;
+}
 
 `;
 const root = ReactDOM.createRoot(document.getElementById("root"));
