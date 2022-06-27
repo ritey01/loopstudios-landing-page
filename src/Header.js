@@ -1,12 +1,8 @@
-import logo from "./images/logo.svg";
-import headerImg from "./images/desktop/image-hero.jpg";
 import styled from "styled-components";
-import { useState } from "react";
+import Navbar from "./components/Navbar";
+import heroImg from "./images/mobile/image-hero.jpg";
 import theme from "./themes/theme";
-
-const StyledHeaderImg = styled.img`
-  width: 100%;
-`;
+import { useState } from "react";
 
 const ContainerHeader = styled.div`
   position: relative;
@@ -14,103 +10,82 @@ const ContainerHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 100%;
+  height: 2rem;
 `;
-const StyledHeader = styled.div``;
-
-const StyledLogo = styled.img``;
+const StyledHeader = styled.header`
+  height: 32.2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, -0.6), rgba(0, 0, 0, -0.6)),
+    url(${heroImg});
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 const StyledNav = styled.nav`
   position: absolute;
   top: 5%;
   left: 5%;
   width: 90%;
-  background-color: green;
-`;
-
-const MenuLabel = styled.label`
-  border-radius: 50%;
-  height: 7rem;
-  width: 7rem;
-  cursor: pointer;
+  height: 2rem;
   z-index: 1000;
-  box-shadow: 0 1rem 3rem rgba(182, 237, 200, 0.3);
-  text-align: center;
+`;
+const MobileNav = styled.div`
+  background-color: black;
+  height: 100vh;
+`;
+const HeaderTitle = styled.h1`
+  position: absolute;
+  top: 20%;
+  color: ${(props) => theme.colors.white};
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  border: 2px solid ${(props) => theme.colors.white};
+  width: 90%;
+  padding: 0.9rem;
+  margin: 0 auto;
+  word-spacing: 44rem;
 `;
 
-const Icon = styled.span`
-  position: relative;
-  background-color: ${(props) =>
-    props.clicked ? "transparent" : "hsl(0, 0%, 100%)"};
-  width: 3rem;
-  height: 2px;
-  display: inline-block;
-  margin-top: 3.5rem;
-  transition: all 0.3s;
-
-  &::before,
-  &::after {
-    content: "";
-    background-color: hsl(0, 0%, 100%);
-    width: 3rem;
-    height: 2px;
-    display: inline-block;
-    position: absolute;
-    left: 0;
-    transition: all 0.3s;
-  }
-  &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
-  }
-  &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.8rem")};
-    transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
-  }
-`;
-// const RightLinks = styled.ul`
-//   list-style: none;
-//   display: flex;
-// `;
-// const NavItems = styled.li`
-//   text-decoration: none;
-//   margin-left: 1rem;
-// `;
 const Header = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   return (
-    <StyledHeader>
-      <StyledHeaderImg src={headerImg} alt="Person playing with VR googles" />
-      <StyledNav>
-        <ContainerHeader>
-          <a href="#Home">
-            <StyledLogo src={logo} alt="loopstudios logo" />
-          </a>
-          <MenuLabel htmlfor="navi-toggle" onClick={handleClick}>
-            <Icon clicked={click}>&nbsp;</Icon>
-          </MenuLabel>
-        </ContainerHeader>
-      </StyledNav>
-    </StyledHeader>
+    <>
+      {!click ? (
+        <StyledHeader>
+          <StyledNav>
+            <ContainerHeader>
+              <Navbar click={click} handleClick={handleClick} />
+            </ContainerHeader>
+          </StyledNav>
+          <HeaderTitle>
+            IMMERSIVE EXPERIENCES <span>THAT</span> DELIVER
+          </HeaderTitle>
+        </StyledHeader>
+      ) : (
+        <MobileNav>
+          <StyledNav>
+            <ContainerHeader>
+              <Navbar click={click} handleClick={handleClick} />
+            </ContainerHeader>
+          </StyledNav>
+        </MobileNav>
+      )}
+    </>
+    //
+    //   <StyledNav>
+    //     <ContainerHeader>
+    //       <Navbar click={click} handleClick={handleClick} />
+    //     </ContainerHeader>
+    //   </StyledNav>
+    //   {!click && (
+    //     <HeaderTitle>
+    //       IMMERSIVE EXPERIENCES <span>THAT</span> DELIVER
+    //     </HeaderTitle>
+    //   )}
+    // </StyledHeader>
   );
 };
 export default Header;
-{
-  /* <RightLinks>
-<NavItems>
-  <a href="#About">About</a>
-</NavItems>
-<NavItems>
-  <a href="#Careers">Careers</a>
-</NavItems>
-<NavItems>
-  <a href="#Events">Events</a>
-</NavItems>
-<NavItems>
-  <a href="#Products">Products</a>
-</NavItems>
-<NavItems>
-  <a href="#Support">Support</a>
-</NavItems>
-</RightLinks> */
-}
