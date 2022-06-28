@@ -38,10 +38,10 @@ const MobileNav = styled.div`
 const HeaderTitle = styled.h1`
   position: absolute;
   top: 20%;
-  color: ${(props) => theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
-  border: 2px solid ${(props) => theme.colors.white};
+  border: 2px solid ${(props) => props.theme.colors.white};
   width: 90%;
   padding: 0.9rem;
   margin: 0 auto;
