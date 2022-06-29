@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import heroImg from "./images/mobile/image-hero.jpg";
-import theme from "./themes/theme";
+import desktopImg from "./images/desktop/image-hero.jpg";
+
 import { useState } from "react";
 
 const ContainerHeader = styled.div`
@@ -11,16 +12,28 @@ const ContainerHeader = styled.div`
   align-items: center;
   max-width: 100%;
   height: 2rem;
+
+  @media (min-width: 1000px) {
+    align-items: normal;
+  }
 `;
 const StyledHeader = styled.header`
-  height: 32.2rem;
+  height: 100vh;
+  width: auto;
   background-image: linear-gradient(rgba(0, 0, 0, -0.6), rgba(0, 0, 0, -0.6)),
     url(${heroImg});
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
+  background-position: top center;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 1000px) {
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, -0.6), rgba(0, 0, 0, -0.6)),
+      url(${desktopImg});
+  }
 `;
 
 const StyledNav = styled.nav`
@@ -30,6 +43,10 @@ const StyledNav = styled.nav`
   width: 90%;
   height: 2rem;
   z-index: 1000;
+  @media (min-width: 1000px) {
+    left: 9%;
+    width: 84%;
+  }
 `;
 const MobileNav = styled.div`
   background-color: black;
@@ -37,15 +54,27 @@ const MobileNav = styled.div`
 `;
 const HeaderTitle = styled.h1`
   position: absolute;
-  top: 20%;
+  top: 11rem;
   color: ${(props) => props.theme.colors.white};
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   border: 2px solid ${(props) => props.theme.colors.white};
-  width: 90%;
+  max-width: 80%;
   padding: 0.9rem;
   margin: 0 auto;
   word-spacing: 44rem;
+  @media (min-width: 600px) {
+    width: 480px;
+  }
+
+  @media (min-width: 1000px) {
+    left: 9%;
+    font-size: 4rem;
+    padding: 2.1rem 1rem 2rem 1.5rem;
+    word-spacing: 0;
+    width: 50%;
+    top: 12rem;
+  }
 `;
 
 const Header = () => {
@@ -74,18 +103,6 @@ const Header = () => {
         </MobileNav>
       )}
     </>
-    //
-    //   <StyledNav>
-    //     <ContainerHeader>
-    //       <Navbar click={click} handleClick={handleClick} />
-    //     </ContainerHeader>
-    //   </StyledNav>
-    //   {!click && (
-    //     <HeaderTitle>
-    //       IMMERSIVE EXPERIENCES <span>THAT</span> DELIVER
-    //     </HeaderTitle>
-    //   )}
-    // </StyledHeader>
   );
 };
 export default Header;
