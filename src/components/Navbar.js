@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo.svg";
+import { useState, useEffect } from "react";
 
 const StyledLogo = styled.img`
   height: 1.2rem;
@@ -11,10 +12,31 @@ const ItemLink = styled(NavLink)`
   text-transform: uppercase;
   color: ${(props) => props.theme.colors.white};
   display: block;
-
   height: 2rem;
-
   font-family: "Josefin Sans", sans-serif;
+
+  @media (min-width: 1000px) {
+    margin: 0.5rem;
+    text-transform: capitalize;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.5rem;
+      left: 0.7rem;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    &:hover::after {
+      width: 60%;
+      opacity: 1;
+    }
+  }
 `;
 const LogoLink = styled(ItemLink)`
   z-index: 1000;
@@ -26,8 +48,10 @@ const MenuLabel = styled.label`
   width: 2rem;
   cursor: pointer;
   z-index: 1000;
-
   text-align: center;
+  @media (min-width: 1000px) {
+    display: none;
+  }
 `;
 
 const Icon = styled.span`
@@ -73,9 +97,25 @@ const List = styled.ul`
 
   padding-top: 4rem;
   background-color: ${(props) => props.theme.colors.black};
+
+  @media (min-width: 1000px) {
+    background-color: transparent;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+
+    position: static;
+  }
 `;
 
 const MobileNav = ({ handleClick, click }) => {
+  let [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  });
+
   return (
     <>
       <LogoLink to="/">
@@ -84,7 +124,7 @@ const MobileNav = ({ handleClick, click }) => {
       <MenuLabel htmlfor="navi-toggle" onClick={handleClick}>
         <Icon clicked={click}></Icon>
       </MenuLabel>
-      {click && (
+      {(click || width >= 1000) && (
         <List>
           <li>
             <ItemLink to="/about">About</ItemLink>
