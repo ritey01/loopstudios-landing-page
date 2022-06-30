@@ -5,7 +5,7 @@ import styled from "styled-components";
 const MobileImg = styled.img`
   height: auto;
   max-width: 85%;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     display: none;
   }
 `;
@@ -14,7 +14,7 @@ const DesktopImg = styled.img`
   height: auto;
   display: none;
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     display: block;
     margin-left: 6rem;
   }
@@ -24,13 +24,17 @@ const StyledBanner = styled.div`
   text-align: center;
   margin-top: 4rem;
   position: relative;
+  @media (min-width: 1400px) {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 `;
 
 const StyledH2 = styled.h2`
   font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
   margin-top: 2rem;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     margin-left: 4rem;
     max-width: 60%;
     margin-top: 1rem;
@@ -50,7 +54,7 @@ const StyledPara = styled.p`
 `;
 
 const StyledDesktop = styled.div`
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     position: absolute;
     bottom: 0;
     right: 12%;

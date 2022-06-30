@@ -20,6 +20,10 @@ import fisheyeDesk from "../images/desktop/image-fisheye.jpg";
 const StyledCreations = styled.div`
   position: relative;
   margin-top: 8rem;
+  @media (min-width: 1400px) {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 `;
 const StyledTitle = styled.h3`
   font-family: "Josefin Sans", sans-serif;
@@ -27,7 +31,7 @@ const StyledTitle = styled.h3`
   margin: 3rem auto 2rem auto;
   font-size: 1.5rem;
   font-weight: 300;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     font-size: 2rem;
     text-align: start;
     margin-left: 6rem;
@@ -44,7 +48,7 @@ const StyledCards = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: auto 5rem;
@@ -60,7 +64,7 @@ const ItemLink = styled(NavLink)`
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.3rem;
   max-width: 49%;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     left: 2rem;
     bottom: 2rem;
   }
@@ -75,7 +79,7 @@ const Item = styled.li`
   background-size: cover;
   position: relative;
   max-width: 670px;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     height: 25rem;
 
     &:hover::before {
@@ -98,7 +102,7 @@ const Item = styled.li`
 const EarthLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${earth});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${earthDesk});
   }
@@ -107,7 +111,7 @@ const EarthLink = styled(Item)`
 const ArcadeLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${arcade});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${arcadeDesk});
   }
@@ -115,7 +119,7 @@ const ArcadeLink = styled(Item)`
 const SoccerLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${soccer});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${soccerDesk});
   }
@@ -128,7 +132,7 @@ const GridLink = styled(Item)`
   @media (min-width: 600px) {
     word-spacing: 0.3rem;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${gridDesk});
     word-spacing: 8rem;
@@ -138,7 +142,7 @@ const GridLink = styled(Item)`
 const AboveLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${above});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${aboveDesk});
   }
@@ -147,7 +151,7 @@ const AboveLink = styled(Item)`
 const PocketLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${pocket});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${pocketDesk});
   }
@@ -156,7 +160,7 @@ const PocketLink = styled(Item)`
 const CuriosityLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${curiosity});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${curiosityDesk});
   }
@@ -165,7 +169,7 @@ const CuriosityLink = styled(Item)`
 const FisheyeLink = styled(Item)`
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
     url(${fisheye});
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent),
       url(${fisheyeDesk});
   }
@@ -185,7 +189,7 @@ const BottomLink = styled(NavLink)`
     background-color: black;
     color: white;
   }
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     position: absolute;
     top: 0;
     right: 0;

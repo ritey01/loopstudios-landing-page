@@ -4,7 +4,7 @@ import logo from "../images/logo.svg";
 import { useState, useEffect } from "react";
 
 const StyledLogo = styled.img`
-  height: 1.2rem;
+  height: 2rem;
 `;
 
 const ItemLink = styled(NavLink)`
@@ -15,7 +15,7 @@ const ItemLink = styled(NavLink)`
   height: 2rem;
   font-family: "Josefin Sans", sans-serif;
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     margin: 0.5rem;
     text-transform: capitalize;
     position: relative;
@@ -49,7 +49,7 @@ const MenuLabel = styled.label`
   cursor: pointer;
   z-index: 1000;
   text-align: center;
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     display: none;
   }
 `;
@@ -59,8 +59,8 @@ const Icon = styled.span`
 
   background-color: ${(props) =>
     props.clicked ? "transparent" : "hsl(0, 0%, 100%)"};
-  width: 1.1rem;
-  height: 2px;
+  width: 1.8rem;
+  height: 3px;
   display: inline-block;
   font-size: 0.09rem;
   transition: all 0.3s;
@@ -69,19 +69,19 @@ const Icon = styled.span`
   &::after {
     content: "";
     background-color: hsl(0, 0%, 100%);
-    width: 1.1rem;
-    height: 2px;
+    width: 1.8rem;
+    height: 3px;
     display: inline-block;
     position: absolute;
     left: 0;
     transition: all 0.3s;
   }
   &::before {
-    top: ${(props) => (props.clicked ? "0" : "-0.4rem")};
+    top: ${(props) => (props.clicked ? "0" : "-0.6rem")};
     transform: ${(props) => (props.clicked ? "rotate(135deg)" : "rotate(0)")};
   }
   &::after {
-    top: ${(props) => (props.clicked ? "0" : "0.4rem")};
+    top: ${(props) => (props.clicked ? "0" : "0.6rem")};
     transform: ${(props) => (props.clicked ? "rotate(-135deg)" : "rotate(0)")};
   }
 `;
@@ -98,7 +98,7 @@ const List = styled.ul`
   padding-top: 4rem;
   background-color: ${(props) => props.theme.colors.black};
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     background-color: transparent;
     display: flex;
     margin: 0;
@@ -124,7 +124,7 @@ const MobileNav = ({ handleClick, click }) => {
       <MenuLabel htmlfor="navi-toggle" onClick={handleClick}>
         <Icon clicked={click}></Icon>
       </MenuLabel>
-      {(click || width >= 1000) && (
+      {(click || width >= 1400) && (
         <List>
           <li>
             <ItemLink to="/about">About</ItemLink>
