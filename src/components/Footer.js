@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import logo from "./images/logo.svg";
-import FacebookIcon from "./images/icon-facebook.svg";
-import TwitterIcon from "./images/icon-twitter.svg";
-import PinterestIcon from "./images/icon-pinterest.svg";
-import InstagramIcon from "./images/icon-instagram.svg";
+import logo from "../images/logo.svg";
+import FacebookIcon from "../images/icon-facebook.svg";
+import TwitterIcon from "../images/icon-twitter.svg";
+import PinterestIcon from "../images/icon-pinterest.svg";
+import InstagramIcon from "../images/icon-instagram.svg";
 
 const ItemLink = styled(NavLink)`
   color: ${(props) => props.theme.colors.white};

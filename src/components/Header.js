@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import heroImg from "./images/mobile/image-hero.jpg";
-import desktopImg from "./images/desktop/image-hero.jpg";
+import heroImg from "../images/mobile/image-hero.jpg";
+import desktopImg from "../images/desktop/image-hero.jpg";
 
 import { useState } from "react";
 
