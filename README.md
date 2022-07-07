@@ -28,9 +28,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](loopstudios-app/src/images/my-designs/desktopMyDesign.png)
+![](src/images/my-designs/desktopMyDesign.png)
 
-![](loopstudios-app/src/images/my-designs/mobileMyDesign.png)
+![](src/images/my-designs/mobileMyDesign.png)
 
 
 ### Links
