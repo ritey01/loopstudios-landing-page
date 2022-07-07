@@ -8,7 +8,6 @@
   - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
-    - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
@@ -28,27 +27,26 @@ Users should be able to:
 
 ### Screenshot
 
-![](src/images/my-designs/desktopMyDesign.png)
 
-![](src/images/my-designs/mobileMyDesign.png)
+<img src ="./src/images/my-designs/desktopMyDesign.png"
+alt="Desktop design" 
+width="200"/>
 
+<img src ="./src/images/my-designs/mobileMyDesign.png"
+alt="Desktop design" 
+width="200"/>
 
-### Links
-
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
-- React
+- Javascript
 - React Router
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
 - [Styled Components](https://styled-components.com/) - For styles
 
 
