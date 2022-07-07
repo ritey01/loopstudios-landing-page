@@ -1,10 +1,9 @@
-# Frontend Mentor - Loopstudios landing page solution
+# Loopstudios landing page solution
 
-This is a solution to the [Loopstudios landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/loopstudios-landing-page-N88J5Onjw). 
+
 
 ## Table of contents
-
-- [Frontend Mentor - Loopstudios landing page solution](#frontend-mentor---loopstudios-landing-page-solution)
+- [Loopstudios landing page solution](#loopstudios-landing-page-solution)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
